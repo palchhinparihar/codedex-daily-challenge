@@ -6,7 +6,8 @@ hi I am Palchhin and here are all the submissions~
 
 | Day  | Community Link | LinkedIn Link |
 |-----------|-------------|-------------|
-| 1 | [link](https://www.codedex.io/community/monthly-challenge/submission/tBgJsnwQlYD9w8BRuffb) | [link](https://www.linkedin.com/posts/palchhinparihar_daily-challenge-day-1-activity-7434624470100889601-2n9q?utm_source=share&utm_medium=member_desktop&rcm=ACoAADqr4ZcBkelN_FsjVy-sTdFjSln4mKN7aOQ)
+| 1 | [link](https://www.codedex.io/community/monthly-challenge/submission/tBgJsnwQlYD9w8BRuffb) | [link](https://www.linkedin.com/posts/palchhinparihar_daily-challenge-day-1-activity-7434624470100889601-2n9q?utm_source=share&utm_medium=member_desktop&rcm=ACoAADqr4ZcBkelN_FsjVy-sTdFjSln4mKN7aOQ) |
+| 2 | [link](https://www.codedex.io/community/monthly-challenge/submission/dOgzW8I5yAJGpqaBxTVv) | [link](https://www.linkedin.com/posts/palchhinparihar_messy-journey-from-app-1-to-app-2-for-day-activity-7434975245901574144-5QuH?utm_source=share&utm_medium=member_desktop&rcm=ACoAADqr4ZcBkelN_FsjVy-sTdFjSln4mKN7aOQ) |
 
 
 
