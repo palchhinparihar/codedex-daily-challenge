@@ -16,6 +16,7 @@ hi I am Palchhin and here are all the submissions~
 | 8 | [link](https://www.codedex.io/community/monthly-challenge/submission/SgRobB2rrf973Bb98nmm) | [link](https://www.linkedin.com/posts/palchhinparihar_day-8-the-challenge-is-sputnik-9-my-activity-7437153603544412160-IBzT?utm_source=share&utm_medium=member_desktop&rcm=ACoAADqr4ZcBkelN_FsjVy-sTdFjSln4mKN7aOQ) |
 | 9 | [link](https://www.codedex.io/community/monthly-challenge/submission/uoNnaMKoVHEKC87swRqf) | [link](https://www.linkedin.com/posts/palchhinparihar_day-9-the-challenge-is-ring-ring-my-activity-7437555339291512832-rVch?utm_source=share&utm_medium=member_desktop&rcm=ACoAADqr4ZcBkelN_FsjVy-sTdFjSln4mKN7aOQ) |
 | 10 | [link](https://www.codedex.io/community/monthly-challenge/submission/ZTLCapVcT7g7eQNuVK0h) | [link](https://www.linkedin.com/posts/palchhinparihar_day-10-the-challenge-is-hitchhikers-guide-activity-7437816407192465408-WnWm?utm_source=share&utm_medium=member_desktop&rcm=ACoAADqr4ZcBkelN_FsjVy-sTdFjSln4mKN7aOQ) | 
+| 11 | [link](https://www.codedex.io/community/monthly-challenge/submission/mcpMcVQO2IKOXtIdzXcT) | [link](https://www.linkedin.com/posts/palchhinparihar_day-11-in-the-web-activity-7438219743599210496-JvLQ?utm_source=share&utm_medium=member_desktop&rcm=ACoAADqr4ZcBkelN_FsjVy-sTdFjSln4mKN7aOQ) |
 
 
 particaption link [here](https://www.codedex.io/community/monthly-challenge/f6fcKs3xRKWhJQdlkKGV)
