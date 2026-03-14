@@ -1,6 +1,6 @@
 # Codédex Daily Code Challenge (March Edition)
 
-hi I am Palchhin and here are all the submissions~
+hi I am [Palchhin](https://www.codedex.io/@palchhin) and here are all the submissions~
 
 ## Submissions
 
