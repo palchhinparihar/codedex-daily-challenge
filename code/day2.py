@@ -1,3 +1,10 @@
+'''
+Approach:
+Convert the input time into total minutes.
+Add 168 minutes three times to get the next intervals.
+Convert each result back to HH:MM format and return the list.
+'''
+
 def blood_moon(time):
   # split input time into hours and minutes
   hours, mins = time.split(':')

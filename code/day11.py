@@ -1,3 +1,10 @@
+'''
+Approach:
+Use one regular expression to test whether the URL matches the expected format.
+If regex finds a match, return "valid".
+Otherwise return "invalid".
+'''
+
 from re import search
 
 def check_url(address):

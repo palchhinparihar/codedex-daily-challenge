@@ -1,3 +1,10 @@
+'''
+Approach:
+For each matchup, take both seed numbers.
+Compute upset probability with the given ratio formula.
+Round each probability to 2 decimals and return all results.
+'''
+
 def upset_probability(matchups):
   # store the upset probablities
   ans = []

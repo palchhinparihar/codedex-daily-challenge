@@ -1,3 +1,10 @@
+'''
+Approach:
+Keep a copy of the original river state.
+For each position, look up to `hours` steps to the left to see if green dye can reach it.
+Mark the position green if reachable, otherwise water.
+'''
+
 def lucky_river(river, hours):
   # copy of the original river list
   original = river[:]

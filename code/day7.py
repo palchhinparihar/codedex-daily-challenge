@@ -1,3 +1,10 @@
+'''
+Approach:
+Compute average yearly net change from first to last value.
+Compare average of first 3 years vs last 3 years to label trend.
+Count how many year-to-year drops happened.
+'''
+
 from statistics import mean
 
 def analyze(percentages):

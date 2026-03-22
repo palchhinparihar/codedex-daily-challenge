@@ -1,3 +1,10 @@
+'''
+Approach:
+Convert each binary switch string to a decimal value.
+Use a lookup table to map that value to a musical note.
+Collect all matched notes in order and return them.
+'''
+
 def dompier_music(switches):
   # map frequency values to musical notes
   frequency_to_note = {

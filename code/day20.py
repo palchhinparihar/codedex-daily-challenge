@@ -1,3 +1,10 @@
+'''
+Approach:
+Split tweet into words and count effective length by rule:
+URLs count as 23, mentions as 20, normal words by actual length.
+Add spaces between words and subtract from 140 to get remaining characters.
+'''
+
 def tweet_balance(tweet):
   # edge case
   if tweet == '':

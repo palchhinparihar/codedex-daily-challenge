@@ -1,3 +1,10 @@
+'''
+Approach:
+Use diameter and pi to compute circumference.
+Divide circumference equally among friends.
+Round to 2 decimals and return the crust length per friend.
+'''
+
 from math import pi
 
 def cut_pie(diameter, friends):

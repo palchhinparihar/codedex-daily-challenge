@@ -1,3 +1,10 @@
+'''
+Approach:
+Define atmospheric layers with their altitude ranges and descent rates.
+For each layer touched by the starting altitude, compute time spent in that layer.
+Sum all layer times and round the final descent time.
+'''
+
 def calculate_descent(altitude):
   if altitude == 0:
     return 0.0  # no descent needed

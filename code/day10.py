@@ -1,3 +1,10 @@
+'''
+Approach:
+Try combinations in increasing size: single numbers, then pairs, then triplets.
+As soon as a combination sums to 42, return its size.
+If no combination works up to size 3, return -1.
+'''
+
 def minimum_components(components):
   # Round 1 - single items
   for num in components:

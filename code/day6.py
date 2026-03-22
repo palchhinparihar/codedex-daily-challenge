@@ -1,3 +1,10 @@
+'''
+Approach:
+Compare planned vs actual sleep for each day and keep only positive debt.
+Accumulate total debt and track consecutive debt days for longest streak.
+Return total debt (with DST adjustment) and longest streak.
+'''
+
 def calculate_sleep_debt(planned, actual):
   # initialize counters
   total_debt, curr_streak, longest_streak = 0, 0, 0  

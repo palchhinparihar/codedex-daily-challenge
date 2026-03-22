@@ -1,3 +1,10 @@
+'''
+Approach:
+Go through both words index by index.
+If letters at the same position match, increase a counter.
+Return the final counter as the answer.
+'''
+
 def wordle_guess(secret, guess):
   # variable to count matching letters in the correct position
   count = 0

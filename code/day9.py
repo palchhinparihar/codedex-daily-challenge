@@ -1,3 +1,10 @@
+'''
+Approach:
+Split the transcript into words.
+Clean each word by keeping only alphabet letters and lowercasing.
+Store cleaned words in a set and return the set size.
+'''
+
 def find_unique_words(transcript):
   unique = set()  # set to store unique words
 

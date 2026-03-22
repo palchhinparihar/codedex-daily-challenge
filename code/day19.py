@@ -1,3 +1,10 @@
+'''
+Approach:
+Slide a 5-day window through the temperature list.
+Compute the average temperature for each window.
+Return the first day where the 5-day average reaches at least 15, else -1.
+'''
+
 def cherry_blossoms(temps):
   n = len(temps)
 

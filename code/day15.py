@@ -1,3 +1,10 @@
+'''
+Approach:
+For each predictor, compare 4 category picks with the actual winners.
+Count matches to get that predictor's score.
+Return the highest scorer's name, or "Tie" when scores are equal.
+'''
+
 def oscar_pool(predictions):
   # actual winners list
   actual_winners = ['One Battle After Another', 'Michael B. Jordan', 'Jessie Buckley', 'Paul Thomas Anderson']

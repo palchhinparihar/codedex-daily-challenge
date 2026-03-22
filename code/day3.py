@@ -1,3 +1,10 @@
+'''
+Approach:
+Keep a fixed list of all expected Holi colors.
+For each color, scan the grid rows to check if it appears.
+If a color is never found, add it to the missing list.
+'''
+
 def find_missing_colors(grid):
   # all possible Holi colors (reference list)
   all_colors = ["🟥", "🟧", "🟨", "🟩", "🟦", "🟪", "🟫"]

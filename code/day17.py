@@ -1,3 +1,10 @@
+'''
+Approach:
+Check only voucher options whose delay is within `max_wait`.
+For each valid option, compute value per hour waited.
+Track and return the index with the best ratio.
+'''
+
 def pick_voucher(vouchers, delays, max_wait):
   # variable to store the best option index
   best_option = -1

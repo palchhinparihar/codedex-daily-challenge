@@ -1,3 +1,10 @@
+'''
+Approach:
+Read the message character by character.
+Keep spaces unchanged; for letters, shift backward by the given value using modulo.
+Build and return the decoded string.
+'''
+
 def decode_message(message, shift):
   # alphabets list to map the characters
   alphabets = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']

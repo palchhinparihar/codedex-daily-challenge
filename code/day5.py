@@ -1,3 +1,10 @@
+'''
+Approach:
+For each element, sort judge scores and drop the highest and lowest.
+Average the remaining scores and convert that to a GOE adjustment.
+Add adjusted element scores to get the final total.
+'''
+
 def calculate_score(elements):
   tes = 0  # total element score
 
