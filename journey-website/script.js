@@ -476,7 +476,7 @@ function renderModalLinks(item) {
     <a class="pixel-link" href="${item.problemUrl}" target="_blank" rel="noreferrer">Problem</a>
     <a class="pixel-link" href="${item.communityUrl}" target="_blank" rel="noreferrer">Community Post</a>
     <a class="pixel-link" href="${item.linkedinUrl}" target="_blank" rel="noreferrer">LinkedIn Post</a>
-    <a class="pixel-link" href="../code/day${item.day}.py" target="_blank" rel="noreferrer">Open Python File</a>
+    <a class="pixel-link" href="https://github.com/palchhinparihar/codedex-daily-challenge/blob/main/code/day${item.day}.py" target="_blank" rel="noreferrer">View Code on GitHub</a>
   `;
 }
 
@@ -484,8 +484,8 @@ function openDayModal(item) {
   modalDay.textContent = `DAY ${item.day}`;
   modalTitle.textContent = `${item.title}`;
   modalNote.textContent = exactNote(item);
-  modalCode.textContent = "Loading exact code...";
-  modalExplanation.textContent = "Building explanation...";
+  modalCode.textContent = "";
+  modalExplanation.textContent = `Time Complexity: ${item.complexity} - ${explainComplexity(item.complexity)}`;
   renderModalLinks(item);
 
   dayModal.classList.add("open");
@@ -497,12 +497,6 @@ function openDayModal(item) {
     [392, 0.08],
     [523, 0.1]
   ]);
-
-  loadDayCode(item.day).then((code) => {
-    const approachText = extractDocComment(code);
-    modalCode.textContent = stripLeadingDocComment(code);
-    modalExplanation.textContent = buildExplanation(approachText, item.complexity);
-  });
 }
 
 function closeDayModal() {
