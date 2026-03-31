@@ -144,6 +144,7 @@ main {
 .hero-art {
   min-height: 220px;
   border: 3px dashed var(--ink-soft);
+  border-radius: 12px;
   position: relative;
   background: linear-gradient(180deg, #d2f0ff 0%, #f9f5de 100%);
   overflow: hidden;
@@ -228,6 +229,83 @@ main {
 
 .cat::after {
   right: 8px;
+}
+
+.hill {
+  position: absolute;
+  border: 3px solid var(--ink);
+  border-bottom: none;
+  border-radius: 120px 120px 0 0;
+}
+
+.hill-back {
+  width: 210px;
+  height: 90px;
+  left: -26px;
+  bottom: 22px;
+  background: #a4e4b4;
+}
+
+.hill-front {
+  width: 250px;
+  height: 108px;
+  right: -32px;
+  bottom: 20px;
+  background: #8bd6a1;
+}
+
+.pixel-tree {
+  position: absolute;
+  width: 16px;
+  height: 46px;
+  bottom: 26px;
+  background: #8e5a3e;
+  box-shadow: 0 -26px 0 10px #4cc9b0, 0 -40px 0 6px #83efd7;
+}
+
+.pixel-tree.t1 {
+  left: 122px;
+}
+
+.pixel-tree.t2 {
+  left: 154px;
+  transform: scale(0.9);
+}
+
+.hero-sign {
+  position: absolute;
+  left: 18px;
+  bottom: 16px;
+  border: 3px solid var(--ink);
+  background: #fff4c2;
+  padding: 0.2rem 0.35rem;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.42rem;
+  line-height: 1.4;
+  box-shadow: 3px 3px 0 #2e2238;
+  z-index: 2;
+}
+
+.hero-pet {
+  position: absolute;
+  right: 40px;
+  bottom: 20px;
+  width: 64px;
+  height: 64px;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 4px 0 rgba(46, 34, 56, 0.35));
+  animation: heroPetHop 1.3s ease-in-out infinite;
+  z-index: 3;
+}
+
+.grass {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 24px;
+  background: repeating-linear-gradient(90deg, #7fcf96 0 10px, #9df1b6 10px 20px);
+  border-top: 3px solid var(--ink);
 }
 
 .section-copy {
@@ -595,14 +673,26 @@ main {
 
 .sparkle {
   position: fixed;
-  width: 10px;
-  height: 10px;
+  left: 0;
+  top: 0;
+  width: var(--size, 11px);
+  height: var(--size, 11px);
+  transform: translate(-50%, -50%) scale(0.2) rotate(0deg);
   pointer-events: none;
-  background: var(--accent-yellow);
-  box-shadow: 0 0 0 3px #fff4b8;
+  background: var(--color, var(--accent-yellow));
+  box-shadow: 0 0 0 3px #fff8de, 0 0 18px 2px rgba(255, 244, 188, 0.9);
+  border: 2px solid #fffdf3;
   image-rendering: pixelated;
-  animation: blink 900ms ease-out forwards;
+  animation: sparkleBurst var(--dur, 850ms) cubic-bezier(0.16, 0.84, 0.35, 1) forwards;
   z-index: 20;
+}
+
+.sparkle-star {
+  clip-path: polygon(50% 0%, 62% 34%, 100% 50%, 62% 66%, 50% 100%, 38% 66%, 0% 50%, 38% 34%);
+}
+
+.sparkle-dot {
+  border-radius: 50%;
 }
 
 @keyframes float {
@@ -642,6 +732,30 @@ main {
   100% {
     opacity: 0;
     transform: scale(3);
+  }
+}
+
+@keyframes sparkleBurst {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.2) rotate(0deg);
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(calc(-50% + var(--dx, 0px)), calc(-50% + var(--dy, 0px))) scale(1.35) rotate(var(--spin, 90deg));
+  }
+}
+
+@keyframes heroPetHop {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
   }
 }
 

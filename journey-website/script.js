@@ -680,14 +680,30 @@ function animateCounters() {
 }
 
 function sparklesAt(x, y, count = 12) {
+  const palette = ["#ff8d6a", "#4cc9b0", "#ffd166", "#ffb3c7", "#8fe3ff"];
+
   for (let i = 0; i < count; i += 1) {
     const sp = document.createElement("div");
-    sp.className = "sparkle";
-    sp.style.left = `${x + (Math.random() - 0.5) * 90}px`;
-    sp.style.top = `${y + (Math.random() - 0.5) * 80}px`;
-    sp.style.background = i % 3 === 0 ? "#ff8d6a" : i % 2 === 0 ? "#4cc9b0" : "#ffd166";
+    const isDot = Math.random() > 0.58;
+    const radius = 30 + Math.random() * 105;
+    const angle = Math.random() * Math.PI * 2;
+    const dx = Math.cos(angle) * radius;
+    const dy = Math.sin(angle) * radius - (10 + Math.random() * 24);
+    const size = 7 + Math.random() * 12;
+    const duration = 620 + Math.random() * 520;
+    const color = palette[Math.floor(Math.random() * palette.length)];
+
+    sp.className = `sparkle ${isDot ? "sparkle-dot" : "sparkle-star"}`;
+    sp.style.left = `${x}px`;
+    sp.style.top = `${y}px`;
+    sp.style.setProperty("--dx", `${dx.toFixed(2)}px`);
+    sp.style.setProperty("--dy", `${dy.toFixed(2)}px`);
+    sp.style.setProperty("--size", `${size.toFixed(2)}px`);
+    sp.style.setProperty("--dur", `${duration.toFixed(0)}ms`);
+    sp.style.setProperty("--spin", `${(-100 + Math.random() * 200).toFixed(0)}deg`);
+    sp.style.setProperty("--color", color);
     document.body.appendChild(sp);
-    setTimeout(() => sp.remove(), 900);
+    setTimeout(() => sp.remove(), duration + 140);
   }
 }
 
@@ -743,12 +759,17 @@ musicToggle.addEventListener("click", async () => {
 });
 
 sparkleBtn.addEventListener("click", () => {
-  sparklesAt(window.innerWidth / 2, window.innerHeight / 2, 24);
+  const centerX = window.innerWidth / 2;
+  const centerY = window.innerHeight / 2;
+  sparklesAt(centerX, centerY, 34);
+  setTimeout(() => sparklesAt(centerX + 24, centerY - 26, 16), 120);
+  setTimeout(() => sparklesAt(centerX - 26, centerY + 20, 14), 240);
   playMelody([
-    [659, 0.06, "triangle", 0.028],
-    [783, 0.07, "triangle", 0.028],
-    [880, 0.08, "triangle", 0.03]
-  ], 70);
+    [659, 0.06, "triangle", 0.03],
+    [783, 0.07, "triangle", 0.03],
+    [988, 0.08, "triangle", 0.032],
+    [1174, 0.1, "triangle", 0.034]
+  ], 65);
 });
 
 startJourney.addEventListener("click", () => {
