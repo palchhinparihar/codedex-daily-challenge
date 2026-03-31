@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Palchhin's Pixel Challenge Journey</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Nunito:wght@500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="sky-overlay" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="logo-wrap">
+      <h1 class="logo">CODÉDEX PIXEL DIARY</h1>
+    </div>
+    <div class="actions">
+      <button id="musicToggle" class="pixel-btn" aria-pressed="false">Sound: Off</button>
+      <button id="sparkleBtn" class="pixel-btn">Sparkle</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero panel reveal">
+      <div class="hero-copy">
+        <p class="tiny">March 2026</p>
+        <h2>30 Days. 30 Challenges. One Super Cute Pixel Adventure.</h2>
+        <p>
+          A cozy, tiny world where each day unlocked one puzzle, one post, and one step closer to finishing the full Codédex challenge streak.
+        </p>
+        <button id="startJourney" class="pixel-btn big">Start Journey</button>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="sun"></div>
+        <div class="cloud c1"></div>
+        <div class="cloud c2"></div>
+        <div class="cat"></div>
+      </div>
+    </section>
+
+    <section id="timeline" class="panel reveal">
+      <h3>Story Chapters</h3>
+      <p class="section-copy">Each card is one daily challenge from your 30/30 run.</p>
+      <div id="dayGrid" class="day-grid"></div>
+    </section>
+
+    <div class="scroll-walker" aria-hidden="true">
+      <div id="walkerTrack" class="walker-track">
+        <img id="walkerSprite" class="walker-gif" src="gif/character.gif" alt="" />
+      </div>
+    </div>
+
+    <section class="panel milestones reveal">
+      <h3>Milestones</h3>
+      <div class="milestone-grid">
+        <article class="mile">
+          <p class="label">Total Challenges</p>
+          <p class="value" data-counter="30">0</p>
+        </article>
+        <article class="mile">
+          <p class="label">Best Streak</p>
+          <p class="value" data-counter="30">0</p>
+        </article>
+        <article class="mile">
+          <p class="label">Total Tries</p>
+          <p class="value" data-counter="50">0</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel finale reveal">
+      <h3>The End? Nope. Next Season Soon.</h3>
+      <p>
+        Thank you for reading this tiny web story. Every day taught something new, and this page turns the streak into a pixel memory book.
+      </p>
+      <div class="links">
+        <a class="pixel-link" href="https://github.com/palchhinparihar/codedex-daily-challenge/blob/main/README.md" target="_blank" rel="noreferrer">Read Full Challenge Log</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer reveal">
+    <p class="footer-title">Built by Palchhin with pixels, code, and consistency.</p>
+    <p class="footer-copy">March 2026 daily challenge journey: 30/30 complete.</p>
+    <div class="footer-links">
+      <a class="pixel-link" href="https://github.com/palchhinparihar/codedex-daily-challenge" target="_blank" rel="noreferrer">GitHub</a>
+      <a class="pixel-link" href="https://www.linkedin.com/in/palchhinparihar" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a class="pixel-link" href="https://www.codedex.io/@palchhin" target="_blank" rel="noreferrer">Codédex</a>
+    </div>
+  </footer>
+
+  <div id="dayModal" class="day-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="day-modal__panel">
+      <button id="closeModal" class="pixel-btn day-modal__close" aria-label="Close day details">Close</button>
+      <p id="modalDay" class="tiny"></p>
+      <h4 id="modalTitle"></h4>
+      <p id="modalNote" class="modal-note"></p>
+
+      <div id="modalLinks" class="modal-links"></div>
+
+      <section class="modal-block">
+        <h5>Code</h5>
+        <pre class="code-view"><code id="modalCode"></code></pre>
+      </section>
+
+      <section class="modal-block">
+        <h5>Explanation</h5>
+        <p id="modalExplanation" class="modal-explanation"></p>
+      </section>
+    </div>
+  </div>
+
+  <div id="journeyIntro" class="journey-intro" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="journeyTitle">
+    <div class="journey-intro__panel">
+      <p class="tiny">Adventure Loading</p>
+      <h4 id="journeyTitle">Your Pixel Story Is Starting...</h4>
+      <img class="journey-intro__gif" src="gif/character.gif" alt="" />
+      <p class="journey-intro__caption">Packing sparkles, confidence, and daily challenge energy.</p>
+      <div class="journey-intro__bar" aria-hidden="true">
+        <span class="journey-intro__fill"></span>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

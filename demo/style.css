@@ -1,0 +1,722 @@
+:root {
+  --bg-cream: #fff8ec;
+  --bg-peach: #ffd7ba;
+  --bg-mint: #b7f4dd;
+  --ink: #2e2238;
+  --ink-soft: #5a4a68;
+  --accent-coral: #ff8d6a;
+  --accent-teal: #4cc9b0;
+  --accent-yellow: #ffd166;
+  --panel: #fffef9;
+  --pixel-shadow: 4px 4px 0 #2e2238;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 10% 15%, #fff7c2 0 8%, transparent 8%),
+    radial-gradient(circle at 80% 30%, #c5f9ff 0 10%, transparent 10%),
+    linear-gradient(180deg, var(--bg-cream), var(--bg-peach));
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.sky-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(transparent 95%, rgba(46, 34, 56, 0.09) 95%);
+  background-size: 100% 6px;
+  opacity: 0.2;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 254, 249, 0.9);
+  border-bottom: 3px solid var(--ink);
+  backdrop-filter: blur(4px);
+}
+
+.logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.header-mascot {
+  width: 34px;
+  height: 34px;
+  image-rendering: pixelated;
+  border: 2px solid var(--ink);
+  background: #fff7e8;
+  box-shadow: 2px 2px 0 #2e2238;
+}
+
+.logo {
+  margin: 0;
+  font-family: "Press Start 2P", cursive;
+  font-size: clamp(0.6rem, 2.2vw, 0.9rem);
+  line-height: 1.7;
+}
+
+.actions {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.pixel-btn {
+  border: 3px solid var(--ink);
+  background: var(--bg-mint);
+  color: var(--ink);
+  box-shadow: var(--pixel-shadow);
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.6rem;
+  padding: 0.7rem 0.85rem;
+  cursor: pointer;
+  transition: transform 120ms ease;
+}
+
+.pixel-btn:hover {
+  transform: translate(-2px, -2px);
+}
+
+.pixel-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 #2e2238;
+}
+
+.pixel-btn.big {
+  margin-top: 0.9rem;
+  background: var(--accent-yellow);
+}
+
+main {
+  width: min(1080px, 92vw);
+  margin: 2rem auto 4rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.panel {
+  border: 4px solid var(--ink);
+  background: var(--panel);
+  padding: clamp(1rem, 2vw, 1.5rem);
+  box-shadow: 7px 7px 0 #2e2238;
+}
+
+.hero {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+}
+
+.tiny {
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.58rem;
+  color: var(--accent-coral);
+}
+
+.hero h2,
+.panel h3 {
+  font-family: "Press Start 2P", cursive;
+  line-height: 1.6;
+}
+
+.hero h2 {
+  font-size: clamp(1rem, 2.2vw, 1.35rem);
+}
+
+.hero-art {
+  min-height: 220px;
+  border: 3px dashed var(--ink-soft);
+  position: relative;
+  background: linear-gradient(180deg, #d2f0ff 0%, #f9f5de 100%);
+  overflow: hidden;
+}
+
+.sun {
+  width: 64px;
+  height: 64px;
+  background: var(--accent-yellow);
+  position: absolute;
+  top: 20px;
+  left: 18px;
+  box-shadow: 0 0 0 4px #fff7ce, 0 0 0 8px #ffd16666;
+  animation: bob 2.4s ease-in-out infinite;
+}
+
+.cloud {
+  position: absolute;
+  width: 80px;
+  height: 28px;
+  background: #fff;
+  box-shadow: 0 4px 0 #c8d7e7;
+  animation: float 8s linear infinite;
+}
+
+.cloud::before,
+.cloud::after {
+  content: "";
+  position: absolute;
+  background: #fff;
+}
+
+.cloud::before {
+  width: 20px;
+  height: 20px;
+  top: -12px;
+  left: 14px;
+}
+
+.cloud::after {
+  width: 28px;
+  height: 28px;
+  top: -16px;
+  left: 38px;
+}
+
+.cloud.c1 {
+  top: 50px;
+  left: -25px;
+}
+
+.cloud.c2 {
+  top: 94px;
+  left: -100px;
+  animation-delay: -4s;
+}
+
+.cat {
+  position: absolute;
+  width: 56px;
+  height: 40px;
+  background: var(--accent-coral);
+  right: 24px;
+  bottom: 20px;
+  box-shadow: inset 0 -6px 0 #ef6f5c;
+  animation: hop 1.2s ease-in-out infinite;
+}
+
+.cat::before,
+.cat::after {
+  content: "";
+  position: absolute;
+  top: -12px;
+  width: 10px;
+  height: 12px;
+  background: var(--accent-coral);
+}
+
+.cat::before {
+  left: 8px;
+}
+
+.cat::after {
+  right: 8px;
+}
+
+.section-copy {
+  margin-top: -0.2rem;
+  color: var(--ink-soft);
+}
+
+.day-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 0.8rem;
+}
+
+.day-card {
+  border: 3px solid var(--ink);
+  background: #fffdf3;
+  padding: 0.65rem;
+  box-shadow: 4px 4px 0 #2e2238;
+  transform: translateY(0);
+  transition: transform 180ms ease;
+  cursor: pointer;
+}
+
+.day-card:hover {
+  transform: translateY(-5px) rotate(-0.8deg);
+}
+
+.day-card:focus-visible {
+  outline: 3px solid var(--accent-coral);
+  outline-offset: 2px;
+}
+
+.day {
+  margin: 0;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.58rem;
+  color: var(--accent-teal);
+}
+
+.title {
+  margin: 0.6rem 0;
+  font-weight: 900;
+  line-height: 1.3;
+}
+
+.meta {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+.milestone-grid {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.mile {
+  border: 3px solid var(--ink);
+  background: #f0fffa;
+  padding: 1rem;
+  text-align: center;
+}
+
+.label {
+  margin: 0;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.56rem;
+  line-height: 1.5;
+}
+
+.value {
+  margin: 0.8rem 0 0;
+  font-family: "Press Start 2P", cursive;
+  font-size: 1.5rem;
+  color: var(--accent-coral);
+}
+
+.links {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.pixel-link {
+  border: 3px solid var(--ink);
+  color: var(--ink);
+  text-decoration: none;
+  padding: 0.65rem 0.9rem;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.56rem;
+  background: #fff5da;
+  box-shadow: var(--pixel-shadow);
+}
+
+.pixel-link:hover {
+  background: #ffe3a1;
+}
+
+.scroll-walker {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 12px;
+  height: 44px;
+  pointer-events: none;
+  z-index: 15;
+}
+
+.scroll-walker::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 4px;
+  height: 6px;
+  background: repeating-linear-gradient(90deg, #6f9f87 0 10px, #9edcb6 10px 20px);
+  border-top: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+  opacity: 0.86;
+}
+
+.walker-track {
+  position: absolute;
+  left: 0;
+  bottom: 8px;
+  width: 58px;
+  height: 58px;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+}
+
+.walker-gif {
+  position: absolute;
+  inset: 0;
+  width: 58px;
+  height: 58px;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 3px 0 rgba(46, 34, 56, 0.4));
+  transform: translateY(0);
+  will-change: transform;
+}
+
+.walker-gif.walking {
+  animation: walkerBounce 300ms ease-in-out infinite;
+}
+
+.day-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(46, 34, 56, 0.56);
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease;
+  z-index: 30;
+  padding: 1rem;
+}
+
+.day-modal.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.journey-intro {
+  position: fixed;
+  inset: 0;
+  background: rgba(46, 34, 56, 0.58);
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease;
+  z-index: 35;
+}
+
+.journey-intro.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.journey-intro__panel {
+  width: min(560px, 100%);
+  border: 4px solid var(--ink);
+  background: linear-gradient(180deg, #fff7e6, #fffdf6);
+  box-shadow: 8px 8px 0 #2e2238;
+  text-align: center;
+  padding: 1rem;
+  transform: scale(0.95);
+  animation: introPop 280ms ease forwards;
+}
+
+.journey-intro__panel h4 {
+  margin: 0.35rem 0 0.8rem;
+  font-family: "Press Start 2P", cursive;
+  font-size: clamp(0.75rem, 2.2vw, 0.98rem);
+  line-height: 1.7;
+}
+
+.journey-intro__gif {
+  width: 92px;
+  height: 92px;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 4px 0 rgba(46, 34, 56, 0.35));
+  animation: introHop 540ms ease-in-out infinite;
+}
+
+.journey-intro__caption {
+  margin: 0.65rem 0 0.75rem;
+  color: var(--ink-soft);
+  font-weight: 700;
+}
+
+.journey-intro__bar {
+  width: min(380px, 92%);
+  margin: 0 auto;
+  height: 16px;
+  border: 3px solid var(--ink);
+  background: #f8efd2;
+  overflow: hidden;
+}
+
+.journey-intro__fill {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: repeating-linear-gradient(90deg, #ffd166 0 14px, #4cc9b0 14px 28px);
+}
+
+.journey-intro.open .journey-intro__fill {
+  animation: introFill 1100ms ease forwards;
+}
+
+.landing-highlight {
+  animation: landingPulse 850ms ease;
+}
+
+.day-modal__panel {
+  width: min(880px, 100%);
+  max-height: 88vh;
+  overflow: auto;
+  border: 4px solid var(--ink);
+  background: #fffef9;
+  box-shadow: 8px 8px 0 #2e2238;
+  padding: 1rem;
+  position: relative;
+}
+
+.day-modal__close {
+  position: sticky;
+  top: 0;
+  margin-left: auto;
+  display: block;
+  z-index: 1;
+}
+
+#modalTitle {
+  margin: 0.4rem 0 0.8rem;
+  font-family: "Press Start 2P", cursive;
+  line-height: 1.6;
+  font-size: clamp(0.88rem, 2vw, 1.15rem);
+}
+
+.modal-note {
+  margin: 0.35rem 0 0.7rem;
+  color: var(--ink-soft);
+  font-weight: 700;
+}
+
+.modal-links {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.9rem;
+}
+
+.modal-block h5 {
+  margin: 0.7rem 0 0.5rem;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.64rem;
+}
+
+.code-view {
+  margin: 0;
+  border: 3px solid var(--ink);
+  background: #171621;
+  color: #f4f3ff;
+  padding: 0.9rem;
+  white-space: pre;
+  overflow: auto;
+  font-family: "Courier New", monospace;
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+.modal-explanation {
+  margin-top: 0;
+  color: #463c53;
+  font-weight: 700;
+  white-space: pre-line;
+}
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  border: 3px solid var(--ink);
+  background: #fff;
+  padding: 0.55rem 0.85rem;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.56rem;
+  box-shadow: var(--pixel-shadow);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease;
+}
+
+.toast.show {
+  opacity: 1;
+}
+
+.site-footer {
+  width: min(1080px, 92vw);
+  margin: 0 auto 3rem;
+  border: 4px solid var(--ink);
+  background: linear-gradient(180deg, #fff3df, #fff9ef);
+  box-shadow: 7px 7px 0 #2e2238;
+  padding: 1rem 1.2rem;
+  text-align: center;
+}
+
+.footer-title {
+  margin: 0;
+  font-family: "Press Start 2P", cursive;
+  font-size: clamp(0.56rem, 1.6vw, 0.72rem);
+  line-height: 1.8;
+}
+
+.footer-copy {
+  margin: 0.65rem 0 0.9rem;
+  color: var(--ink-soft);
+  font-weight: 700;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 500ms ease, transform 500ms ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.sparkle {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  pointer-events: none;
+  background: var(--accent-yellow);
+  box-shadow: 0 0 0 3px #fff4b8;
+  image-rendering: pixelated;
+  animation: blink 900ms ease-out forwards;
+  z-index: 20;
+}
+
+@keyframes float {
+  from {
+    transform: translateX(-20%);
+  }
+  to {
+    transform: translateX(220%);
+  }
+}
+
+@keyframes hop {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0.95;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(3);
+  }
+}
+
+@keyframes walkerBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes introPop {
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes introHop {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes introFill {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes landingPulse {
+  0% {
+    box-shadow: 7px 7px 0 #2e2238, 0 0 0 0 rgba(255, 141, 106, 0.45);
+  }
+  100% {
+    box-shadow: 7px 7px 0 #2e2238, 0 0 0 16px rgba(255, 141, 106, 0);
+  }
+}
+
+@media (max-width: 780px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-art {
+    min-height: 190px;
+  }
+
+  .pixel-btn,
+  .pixel-link {
+    font-size: 0.52rem;
+  }
+
+  .scroll-walker {
+    bottom: 8px;
+  }
+
+  .day-modal__panel {
+    max-height: 92vh;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition-duration: 1ms !important;
+  }
+}
