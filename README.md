@@ -50,4 +50,4 @@
 
 ## _End of Level_
 
-consistency hits hard~ on to what’s next :)
+my [final thoughts](https://www.linkedin.com/posts/palchhinparihar_daily-code-challenges-journey-its-been-activity-7444983484546281473-KviQ?utm_source=share&utm_medium=member_desktop&rcm=ACoAADqr4ZcBkelN_FsjVy-sTdFjSln4mKN7aOQ) - consistency hits hard~ on to what’s next :)
