@@ -106,14 +106,23 @@
 
       <div id="modalLinks" class="modal-links"></div>
 
-      <section class="modal-block">
+      <section class="modal-block code-section">
         <h5>Code</h5>
         <pre class="code-view"><code id="modalCode"></code></pre>
       </section>
 
-      <section class="modal-block">
+      <section class="modal-block explanation-section">
         <h5>Explanation</h5>
-        <p id="modalExplanation" class="modal-explanation"></p>
+        <div class="explanation-content">
+          <div class="explanation-part">
+            <h6>Approach</h6>
+            <p id="modalApproach" class="explanation-text"></p>
+          </div>
+          <div class="explanation-part">
+            <h6>Complexity</h6>
+            <p id="modalComplexity" class="explanation-text"></p>
+          </div>
+        </div>
       </section>
     </div>
   </div>
@@ -132,6 +141,7 @@
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
+  <script src="code-explanations.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

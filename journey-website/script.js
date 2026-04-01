@@ -4,10 +4,22 @@ const challenges = [
     title: "Wordle",
     time: "3:50",
     tries: 1,
-    complexity: "O(1)",
+    complexity: "O(n)",
     problemUrl: "https://www.codedex.io/daily-challenge/2026-03-02",
     communityUrl: "https://www.codedex.io/community/monthly-challenge/submission/tBgJsnwQlYD9w8BRuffb",
-    linkedinUrl: "https://www.linkedin.com/posts/palchhinparihar_daily-challenge-day-1-activity-7434624470100889601-2n9q"
+    linkedinUrl: "https://www.linkedin.com/posts/palchhinparihar_daily-challenge-day-1-activity-7434624470100889601-2n9q",
+    code: `def wordle_guess(secret, guess):
+  count = 0
+
+  for i in range(len(secret)):
+    if secret[i] == guess[i]:
+      count += 1
+  
+  return count
+
+print(wordle_guess("CODEX", "COINS"))  # Output: 2`,
+    approach: "Go through both words index by index. If letters at the same position match, increase a counter. Return the final counter as the answer. This compares the secret word with the guess word character-by-character, counting how many letters are in the correct position (like the Wordle game).",
+    codeExplanation: "The function loops through each character once comparing secret[i] with guess[i]. Each iteration does constant-time comparison. Because we go through n characters exactly once, the time complexity is O(n). Space complexity is O(1) as we only use one variable (count) regardless of input size."
   },
   {
     day: 2,
@@ -484,8 +496,38 @@ function openDayModal(item) {
   modalDay.textContent = `DAY ${item.day}`;
   modalTitle.textContent = `${item.title}`;
   modalNote.textContent = exactNote(item);
-  modalCode.textContent = "";
-  modalExplanation.textContent = `Time Complexity: ${item.complexity} - ${explainComplexity(item.complexity)}`;
+  
+  // Get code explanation from codeExplanations object
+  const explanation = codeExplanations[item.day];
+  
+  if (explanation) {
+    modalCode.textContent = explanation.code || "Code not available";
+    
+    // Populate approach section
+    const approachEl = document.getElementById("modalApproach");
+    if (approachEl) {
+      approachEl.textContent = explanation.approach || "Approach not available";
+    }
+    
+    // Populate time complexity explanation
+    const complexityEl = document.getElementById("modalComplexity");
+    if (complexityEl) {
+      complexityEl.textContent = explanation.complexity || "Time complexity not available";
+    }
+  } else {
+    modalCode.textContent = item.code || "Code not available";
+    
+    const approachEl = document.getElementById("modalApproach");
+    if (approachEl) {
+      approachEl.textContent = item.approach || "Approach not available";
+    }
+    
+    const complexityEl = document.getElementById("modalComplexity");
+    if (complexityEl) {
+      complexityEl.textContent = item.codeExplanation || "Time complexity not available";
+    }
+  }
+  
   renderModalLinks(item);
 
   dayModal.classList.add("open");
