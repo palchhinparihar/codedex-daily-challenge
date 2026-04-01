@@ -2,7 +2,9 @@
 
 <div align="center">
 
-  <img width="948" height="237" alt="Screenshot 2026-03-31 195221" src="https://github.com/user-attachments/assets/1a19cfca-769d-4bb9-95fa-0fe328d83936" />
+  <a href="https://codedex-march-challenge.netlify.app/" target="_blank">
+    <img width="948" height="237" alt="Screenshot 2026-03-31 195221" src="https://github.com/user-attachments/assets/1a19cfca-769d-4bb9-95fa-0fe328d83936" />
+  </a>
   
   hi I am [Palchhin](https://www.codedex.io/@palchhin) and [I AM IN](https://www.codedex.io/community/monthly-challenge/submission/JJAopDvrkLhNdT5kVO8k) for the daily challenge! :)
     
