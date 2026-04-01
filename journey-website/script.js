@@ -4,7 +4,7 @@ const challenges = [
     title: "Wordle",
     time: "3:50",
     tries: 1,
-    complexity: "O(n)",
+    complexity: "O(1)",
     problemUrl: "https://www.codedex.io/daily-challenge/2026-03-02",
     communityUrl: "https://www.codedex.io/community/monthly-challenge/submission/tBgJsnwQlYD9w8BRuffb",
     linkedinUrl: "https://www.linkedin.com/posts/palchhinparihar_daily-challenge-day-1-activity-7434624470100889601-2n9q",
@@ -166,7 +166,7 @@ print(wordle_guess("CODEX", "COINS"))  # Output: 2`,
     title: "Green Chicago River",
     time: "7:23",
     tries: 1,
-    complexity: "O(N * h)",
+    complexity: "O(N * H)",
     problemUrl: "https://www.codedex.io/daily-challenge/2026-03-17",
     communityUrl: "https://www.codedex.io/community/monthly-challenge/submission/KBqsN6VjHw5y3nU0d36D",
     linkedinUrl: "https://www.linkedin.com/posts/palchhinparihar_day-16-the-challenge-is-green-chicago-river-activity-7440041354396692480-FtKl"
@@ -357,7 +357,7 @@ function ensureAudio() {
   }
 }
 
-function playTone(freq, duration = 0.12, type = "triangle", volume = 0.045) {
+function playTone(freq, duration = 0.12, type = "sine", volume = 0.055) {
   if (!audioEnabled || !audioCtx) return;
 
   const now = audioCtx.currentTime;
@@ -369,14 +369,14 @@ function playTone(freq, duration = 0.12, type = "triangle", volume = 0.045) {
   osc.type = type;
   osc.frequency.value = freq;
   osc2.type = "sine";
-  osc2.frequency.value = freq * 2;
+  osc2.frequency.value = freq * 1.5;
 
   filter.type = "lowpass";
-  filter.frequency.value = 1800;
+  filter.frequency.value = 3200;
 
-  gain.gain.setValueAtTime(0.0001, now);
-  gain.gain.linearRampToValueAtTime(volume, now + 0.02);
-  gain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+  gain.gain.setValueAtTime(0, now);
+  gain.gain.linearRampToValueAtTime(volume, now + 0.015);
+  gain.gain.exponentialRampToValueAtTime(0.00001, now + duration);
 
   osc.connect(filter);
   osc2.connect(filter);
@@ -721,10 +721,10 @@ function sparklesAt(x, y, count = 12) {
   for (let i = 0; i < count; i += 1) {
     const sp = document.createElement("div");
     const isDot = Math.random() > 0.58;
-    const radius = 30 + Math.random() * 105;
+    const radius = 40 + Math.random() * 260;
     const angle = Math.random() * Math.PI * 2;
     const dx = Math.cos(angle) * radius;
-    const dy = Math.sin(angle) * radius - (10 + Math.random() * 24);
+    const dy = Math.sin(angle) * radius - (15 + Math.random() * 35);
     const size = 7 + Math.random() * 12;
     const duration = 620 + Math.random() * 520;
     const color = palette[Math.floor(Math.random() * palette.length)];

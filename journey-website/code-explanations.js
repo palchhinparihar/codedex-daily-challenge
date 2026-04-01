@@ -15,7 +15,7 @@ const codeExplanations = {
 
 print(wordle_guess("CODEX", "COINS"))`,
     approach: "Go through both words index by index. If letters at the same position match, increase a counter. Return the final counter as the answer. This function compares the secret word with the guess word character-by-character, counting how many letters are in the correct position, similar to the Wordle game mechanics.",
-    complexity: "Time: O(n) where n is the length of the word - we iterate through each character exactly once. Space: O(1) - we only use a single integer variable regardless of input size."
+    complexity: "Time: O(1) - The loop runs exactly once per character position (fixed word length). In Wordle, you're always comparing two 5-letter words, making this a constant operation. Space: O(1) - Only a single counter variable is used."
   },
   2: {
     code: `def blood_moon(time):
@@ -65,7 +65,7 @@ print(wordle_guess("CODEX", "COINS"))`,
   
   return missing`,
     approach: "Maintain a fixed reference list of all 7 Holi colors. For each color, iterate through all rows in the grid to check if it appears anywhere. If a color is never found in any row, add it to the missing list. Return the complete list of missing colors.",
-    complexity: "Time: O(c * r * m) where c=7 colors, r=number of rows, m=row length. Space: O(c) - maximum 7 missing colors can be stored."
+    complexity: "Time: O(1) - We always check exactly 7 fixed Holi colors (constant), so despite nested loops, the total constant-factor iterations remain bounded. Space: O(1) - Maximum 7 missing colors can be stored."
   },
   4: {
     code: `def dompier_music(switches):
@@ -98,7 +98,7 @@ print(wordle_guess("CODEX", "COINS"))`,
   
   return notes`,
     approach: "For each binary switch string, convert it to a decimal number by treating it as binary. Iterate through digits from right to left, multiplying each by the appropriate power of 2. Look up the decimal value in the frequency-to-note dictionary. Only append notes for valid frequencies, ignore invalid ones.",
-    complexity: "Time: O(n * m) where n=number of switches, m=bits per switch (conversion from binary to decimal). Space: O(n) for storing the notes list."
+    complexity: "Time: O(N) where N=number of switches. Each switch has a fixed length (constant bits), making binary-to-decimal conversion constant time per switch. Dictionary lookup and append are O(1). Space: O(N) for the resulting notes list."
   },
   5: {
     code: `def calculate_score(elements):
@@ -114,7 +114,7 @@ print(wordle_guess("CODEX", "COINS"))`,
 
   return round(tes, 1)          # return rounded total`,
     approach: "For each skating element, sort the judge scores and remove the highest and lowest scores (trimming outliers). Calculate average of remaining scores. Multiply by 0.1 times the base value to get GOE adjustment. Add to base value for final element score. Sum all element scores and round to 1 decimal.",
-    complexity: "Time: O(n * m*log(m)) where n=elements, m=judges per element due to sorting. Space: O(m) for storing sorted judges array."
+    complexity: "Time: O(N) where N=number of elements. The number of judges per element is typically fixed (5-11), making sorting constant time. Each element does fixed comparisons and calculations. Space: O(1) - storing a fixed number of judge scores per element."
   },
   6: {
     code: `def calculate_sleep_debt(planned, actual):
@@ -210,7 +210,7 @@ def analyze(percentages):
 
 print(find_unique_words("Mr. Watson, come here, I want to see you."))`,
     approach: "Split transcript into words. For each word, iterate through characters and keep only alphabetic characters, converting to lowercase. Add cleaned word to a set to automatically handle duplicates. Return the size of the set which represents unique word count.",
-    complexity: "Time: O(n * m) where n=words, m=average word length for cleaning characters. Space: O(n) for storing unique words in set."
+    complexity: "Time: O(N) where N=total characters in transcript. We iterate through each character once during split and cleaning. Set insertion/lookup is O(1) average. Space: O(N) for storing unique words in the set."
   },
   10: {
     code: `def minimum_components(components):
@@ -365,7 +365,7 @@ print(decode_message('aj xlmwtev xmnq lcsr ohhwx', 4))`,
   
   return result`,
     approach: "Create a copy of the original river state. For each position, look backward up to 'hours' steps to check if green dye (☘️) appears within reach. If green dye can reach this position within the time limit, mark it green. Otherwise keep it as water.",
-    complexity: "Time: O(n * hours) where n=river length. Space: O(n) for the result list and river copy."
+    complexity: "Time: O(N * H) where N=river length and H=hours (maximum backward reach). For each position, we check up to H previous positions. Space: O(N) for storing the result list and original river copy."
   },
   17: {
     code: `def pick_voucher(vouchers, delays, max_wait):
@@ -463,7 +463,7 @@ print(decode_message('aj xlmwtev xmnq lcsr ohhwx', 4))`,
   
   return round(volume, 2)`,
     approach: "Iterate through each hour, reducing the volume by the leak percentage. After each reduction, check if the volume falls below the threshold. Return -1 if threshold is breached, or final rounded volume if successful.",
-    complexity: "Time: O(hours) - one iteration per hour. Space: O(1) - only uses volume variable."
+    complexity: "Time: O(N) where N=hours. We iterate once per hour performing constant-time arithmetic and comparison operations. Space: O(1) - only uses scalar variables for volume and arithmetic."
   },
   22: {
     code: `def cuddly_kittens(kittens, limit):
@@ -655,7 +655,7 @@ def days_to_infect(city):
   # return days if all infected, else -1 (some unreachable)
   return days if healthy_count == 0 else -1`,
     approach: "Use BFS (Breadth-First Search) to simulate infection spread. Initialize queue with all infected positions. Each day, process all currently infected cells and infect adjacent healthy neighbors. Count total infected people and track days elapsed until all are infected.",
-    complexity: "Time: O(rows * cols) - each cell visited once. Space: O(rows * cols) for queue in worst case."
+    complexity: "Time: O(N * M) where N=rows and M=columns of the city grid. Each cell is visited exactly once in BFS. Space: O(N * M) for the queue and grid storage in worst case when all cells become infected."
   },
   28: {
     code: `def average_time(total, completed):
@@ -699,7 +699,7 @@ def days_to_infect(city):
     
   return score`,
     approach: "Convert message to lowercase for case-insensitive matching. Define lists of happy and sad emoticons. For each emoticon, split message and count occurrences (split count - 1). Add happy counts to score, subtract sad counts. Return final sentiment score.",
-    complexity: "Time: O(n*m) where n=message length, m=number of emoticons (split operations). Space: O(n) for split results."
+    complexity: "Time: O(N * K) where N=message length and K=number of emoticons (6 happy + 3 sad = 9 total). Each split operation scans the entire message. Space: O(N) for each split result stored temporarily during the split operations."
   },
   30: {
     code: `def longest_streak(progress):
