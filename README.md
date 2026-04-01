@@ -1,11 +1,11 @@
-# [Codédex Daily Code Challenge](https://www.codedex.io/community/monthly-challenge/f6fcKs3xRKWhJQdlkKGV) (March Edition)
-
-<img width="948" height="237" alt="Screenshot 2026-03-31 195221" src="https://github.com/user-attachments/assets/1a19cfca-769d-4bb9-95fa-0fe328d83936" />
-
-hi I am [Palchhin](https://www.codedex.io/@palchhin) and [I AM IN](https://www.codedex.io/community/monthly-challenge/submission/JJAopDvrkLhNdT5kVO8k) for the daily challenge! :)
+# _[Codédex Daily Code Challenge](https://www.codedex.io/community/monthly-challenge/f6fcKs3xRKWhJQdlkKGV)_ (March Edition)
 
 <div align="center">
+
+  <img width="948" height="237" alt="Screenshot 2026-03-31 195221" src="https://github.com/user-attachments/assets/1a19cfca-769d-4bb9-95fa-0fe328d83936" />
   
+  hi I am [Palchhin](https://www.codedex.io/@palchhin) and [I AM IN](https://www.codedex.io/community/monthly-challenge/submission/JJAopDvrkLhNdT5kVO8k) for the daily challenge! :)
+    
   ![Language](https://img.shields.io/badge/Language-Python-7AA2F7?style=for-the-badge&labelColor=1A1B26&logo=python&logoColor=white)
   ![Days Completed](https://img.shields.io/badge/Days_Completed-30%2F30-9ECE6A?style=for-the-badge&labelColor=1A1B26)
   ![Best Streak](https://img.shields.io/badge/Best_Streak-30-E0AF68?style=for-the-badge&labelColor=1A1B26)
@@ -13,7 +13,7 @@ hi I am [Palchhin](https://www.codedex.io/@palchhin) and [I AM IN](https://www.c
   
 </div>
 
-## Submissions
+## _Submissions_
 
 | Day  | Problem | Community Link | LinkedIn Link | Time Taken | Tries | Time Complexity | Extra |
 |-----------|---------|-------------|-------------|-------------|-------------|-------------|------|
@@ -48,4 +48,6 @@ hi I am [Palchhin](https://www.codedex.io/@palchhin) and [I AM IN](https://www.c
 | 29 | [Ye Olde Emoticons 📰](https://www.codedex.io/daily-challenge/2026-03-30) | [link](https://www.codedex.io/community/monthly-challenge/submission/jHb5iHJd3KdW7y31uaNd) | [link](https://www.linkedin.com/posts/palchhinparihar_activity-7444637140065345536-tMF5?utm_source=share&utm_medium=member_desktop&rcm=ACoAADqr4ZcBkelN_FsjVy-sTdFjSln4mKN7aOQ) | 15:26 | 4 | O(N * K) |
 | 30 | [My Best Streak 🔥](https://www.codedex.io/daily-challenge/2026-03-31) | [link](https://www.codedex.io/community/monthly-challenge/submission/4pPRroMs4rAA0VncoUvm) | [link](https://www.linkedin.com/posts/palchhinparihar_a-sweet-goodbye-activity-7444749218004660224-T34I?utm_source=share&utm_medium=member_desktop&rcm=ACoAADqr4ZcBkelN_FsjVy-sTdFjSln4mKN7aOQ) | 2:20 | 1 | O(N) |
 
-thank you~
+## _End of Level_
+
+consistency hits hard~ on to what’s next :)
